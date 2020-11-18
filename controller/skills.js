@@ -9,7 +9,10 @@ function index(req, res) {
     });
 }
 
-
+function show(req, res) {
+    const skill = Skill.getOne(req.params.id);
+    res.render('skills/show', { skill });
+}
 
 
 
@@ -24,4 +27,5 @@ function index(req, res) {
 //This is the information we're pushing out to be used by routes
 module.exports = {
     index,
+    show,
 }

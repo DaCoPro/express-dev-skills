@@ -12,7 +12,11 @@ const skills = [
 function getAll() {
   return skills;
 }
-
+function getOne(id) {
+  // URL params are always strings
+  id = parseInt(id);
+  return skills.find(t => t.id === id);
+}
 
 
 
@@ -23,5 +27,6 @@ function getAll() {
 
 //This is what we send out to controller file
 module.exports = {
-    getAll
+    getAll,
+    getOne,
 };
