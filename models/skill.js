@@ -18,7 +18,11 @@ function getOne(id) {
   return skills.find(t => t.id === id);
 }
 
-
+function create(skill) {
+  skill.id = Date.now() % 1000000;
+  skills.skill = skill;
+  skills.push(skill);
+}
 
 
 
@@ -29,4 +33,5 @@ function getOne(id) {
 module.exports = {
     getAll,
     getOne,
+    create
 };
