@@ -6,12 +6,18 @@ module.exports = {
     index,
     show,
     new: newTodo,
-    create
+    create,
+    delete: deleteTodo
+}
+
+//delete function
+function deleteTodo(req, res) {
+    Skill.deleteOne(req.params.id);
+    res.redirect('/skills');
 }
 
 //This is the function that adds form contents to the list
 function create(req, res) {
-    console.log(req.body);
     Skill.create(req.body);
     res.redirect('/skills');
 }
