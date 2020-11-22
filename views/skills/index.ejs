@@ -20,12 +20,11 @@
                 class="delete-form" method="POST">
                 <button type="submit">X</button>
               </form>
-              <%= t.skill %>
+              <a href="/skills/<%= t.id %>"><%= t.skill %></a>
           </li>
         <% }); %>
       </ul>
-      <a href="/">Home</a>
-      <a href="/skills/new">Add Skill</a>
+      
     </main>
 
     <footer>
