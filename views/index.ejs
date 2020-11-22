@@ -1,15 +1,27 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+
   <body>
-    <%- include('./partials/header.ejs'); %>
-    <h1><%= title %></h1>
-    <p>Welcome! Here you'll find a totally understated and humble list of 
+    <header>
+      <%- include('./partials/header.ejs'); %>
+    </header>
+
+    <main>
+      <h1><%= title %></h1>
+      <p>Welcome! Here you'll find a totally understated and humble list of 
       my developer skills. Bask in my glory.
-    </p>
-    <a href="/skills">This links to an index of my skills!</a>
+      </p>
+      <a href="/skills">This links to an index of my skills!</a>
+    </main>
+
+    <footer>
+      <%- include('./partials/footer.ejs'); %>
+    </footer>
   </body>
+  
 </html>

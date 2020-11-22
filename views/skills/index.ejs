@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-  
-    <h1>Skills</h1>
-    <ul>
-      <% skills.forEach(function(t) { %>
-        <li>
-            <form action="/skills/<%= t.id %>>?_method=DELETE"
-              class="delete-form" method="POST">
-              <button type="submit">X</button>
-            </form>
-            <%= t.skill %>
-        </li>
-      <% }); %>
-    </ul>
-    <a href="/skills/new">Add Skill</a>
-    <br>
-    <a href="/">Main Page</a> 
-  </body>
-</html>
+<html>
 
+  <head>
+    <title>All Skills</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+    <header>
+      <%- include('../partials/header.ejs'); %>
+    </header>
+
+    <main>
+      <h1>Skills</h1>
+      <ul>
+        <% skills.forEach(function(t) { %>
+          <li>
+              <form action="/skills/<%= t.id %>>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit">X</button>
+              </form>
+              <%= t.skill %>
+          </li>
+        <% }); %>
+      </ul>
+      <a href="/">Home</a>
+      <a href="/skills/new">Add Skill</a>
+    </main>
+
+    <footer>
+      <%- include('../partials/footer.ejs'); %>
+    </footer>
+  </body>
+  
+</html>
 
