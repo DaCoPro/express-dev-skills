@@ -1,4 +1,3 @@
-//Here's our data
 const skills = [
   {id: 1, skill: 'CSS'},
   {id: 2, skill: 'HTML'},
@@ -8,33 +7,15 @@ const skills = [
   {id: 6, skill: 'Markdown'},
 ];
 
-// our exported function that translates these values into the controller
 function getAll() {
   return skills;
 }
 function getOne(id) {
-  // URL params are always strings
   id = parseInt(id);
   return skills.find(t => t.id === id);
 }
 
-function create(skill) {
-  skill.id = Date.now() % 1000000;
-  skills.push(skill);
-}
-
-function deleteOne(id) {
-  const idx = skills.findIndex(skill => skill.id ===  parseInt(id));
-  skills.splice(idx, 1);
-}
-
-
-
-
-//This is what we send out to controller file
 module.exports = {
     getAll,
     getOne,
-    create,
-    deleteOne
 };
