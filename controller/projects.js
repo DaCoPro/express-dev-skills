@@ -2,7 +2,7 @@ const Project = require('../models/project');
 
 module.exports = {
     index,
-    //show,
+    show,
 }
 
 function index(req, res) {
@@ -10,7 +10,7 @@ function index(req, res) {
         projects: Project.getAll()
     });
 }
-// function show(req, res) {
-//     const skill = Skill.getOne(req.params.id);
-//     res.render('skills/show', { skill });
-// }
+function show(req, res) {
+    const project = Project.getOne(req.params.id);
+    res.render(`projects/${project.project}`, { project });
+}
